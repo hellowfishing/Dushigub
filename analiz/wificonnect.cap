@@ -1,0 +1,6 @@
+net.probe on
+ticker on
+clear
+net.show
+sleep 20
+

@@ -1,0 +1,18 @@
+set dns.spoof.domains microsoft.com, m.vk.com, vk.com, m.ru.aliexpress.com, tim.org, www.tim.org, vkuseraudio.net, kali.org, api2.musical.ly, stats.vk-portal.net, instagram.com, i.instagram.com, graph.instagram.com, userapi.com, www.youtube.com, youtube.com, 87.240.190.67, 87.240.190.72, 93.186.225.208, google.com                                                       
+
+
+set dhcp6.spoof.domains microsoft.com, m.vk.com, vk.com, m.ru.aliexpress.com, tim.org, www.tim.org, vkuseraudio.net, kali.org, api2.musical.ly, stats.vk-portal.net, instagram.com, i.instagram.com, graph.instagram.com, userapi.com, youtube.com, www.youtube.com, 87.240.190.67, 87.240.190.72, 93.186.225.208, google.com
+
+set http.server 127.0.0.1
+set http.server.path /root/scan/www/
+
+http.server on
+
+dhcp6.spoof on
+
+dns.spoof on
+
+set $ {by}{fw}{cidr} {fb}> {env.iface.ipv6} {reset} {bold}» {reset}
+
+events.clear
+clear
