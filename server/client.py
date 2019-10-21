@@ -50,9 +50,7 @@ host = ''
 port = 0
 
 name_server=input(color.DARKCYAN+color.BOLD+'ip-server: '+color.END)
-print(color.FAIL+'Ожидайте, идет подключение...'+color.END)
 print(color.FAIL+'Default port 7495'+color.END)
-
 server = (name_server,7495)
 
 s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
@@ -68,7 +66,9 @@ while True:
         if join == False:
             alias=input('Name: ')
             os.system('clear')
-            s.sendto(("["+color.DARKCYAN+color.BOLD+alias+color.END+"] =>"+color.OKGREEN+" online "+color.END).encode("utf-8"),server)
+            time.sleep(2)
+            print(color.DARKCYAN+color.BOLD+'Ожидайте когда вас утвердят...'+color.END)
+            s.sendto(("["+color.DARKCYAN+color.BOLD+alias +color.END+"] =>"+color.OKGREEN+" online "+color.END).encode("utf-8"),server)
             join = True
         else:
             try:
@@ -87,6 +87,7 @@ while True:
             except:
                 s.sendto(("["+color.OKGREEN+color.BOLD+alias+color.END+"] <="+color.RED+" offline "+color.END).encode("utf-8"),server)
                 time.sleep(0.1)
+                print('\n')
                 print("Выход")
                 time.sleep(0.2)
                 shuntdown = True
