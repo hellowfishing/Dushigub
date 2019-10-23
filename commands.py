@@ -366,12 +366,12 @@ def welcome():
                            nomers = input(color.FAIL+'Номер для спам атаки: '+color.END)
                            taim = input(color.FAIL+'Укажите таймаут отправки смс: '+color.END)
                            with open('spams.py', 'w') as nomer:
-                               nomer.write('''
-        import os
-        import time
+                                 nomer.write('''
+import os
+import time
 
-        print('Запускаю атаку на номер: '''+str(nomers)+'''')
-        os.system("python2 spammer.py '''+str(nomers)+''' --delay '''+str(taim)+'''")
+print('Запускаю атаку на номер: '''+str(nomers)+'''')
+os.system("python2 spammer.py '''+str(nomers)+''' --delay '''+str(taim)+'''")
                                ''')
                            print('Все готово!')
                            os.system('chmod +x spams.py')
